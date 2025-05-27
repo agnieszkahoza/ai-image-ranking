@@ -1,13 +1,19 @@
-import './App.css';
-import Button from '@mui/material/Button';
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import "./App.css";
+import NavBar from "./components/NavBar";
+import AppRoutes from "./routes/AppRoutes";
+import theme from "./theme";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <Button variant="contained">Contained</Button>
-      </header>
-    </div>
+    <ThemeProvider  theme={theme}>
+      <CssBaseline />
+
+      <div className="App">
+        <NavBar />
+        {/* <AppRoutes /> */}
+      </div>
+    </ThemeProvider>
   );
 }
 
