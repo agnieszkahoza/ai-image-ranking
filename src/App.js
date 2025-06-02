@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import AppRoutes from "./routes/AppRoutes";
 import theme from "./theme";
 import { useState } from "react";
-import initialImages from "./data/ImageData";
+import { initialImages } from "./data/ImageData";
 
 function App() {
   const [images, setImages] = useState(initialImages);
@@ -53,6 +53,19 @@ function App() {
     ]);
   };
 
+    const handleFavorite = (imageId) => {
+    setImages((prevImages) =>
+      prevImages.map((image) =>
+        image.id === imageId
+          ? {
+              ...image,
+              favorite: !image.favorite,
+            }
+          : image
+      )
+    );
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -64,6 +77,7 @@ function App() {
           handleDownvote={handleDownvote}
           handleUpvote={handleUpvote}
           handleNewImage={handleNewImage}
+          handleFavorite={handleFavorite}
         />
       </div>
     </ThemeProvider>
