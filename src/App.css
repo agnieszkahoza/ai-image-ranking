@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.ai-card {
+  width: 400px;
+  height: fit-content;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ai-card img{
+  max-height: 200px;
+  object-fit: cover;
+  width: auto;
+  border-radius: 10px;
+}
