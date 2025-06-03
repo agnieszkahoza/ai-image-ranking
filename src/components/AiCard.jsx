@@ -1,28 +1,27 @@
-import { Button, IconButton } from "@mui/material";
+import { Button, Card, CardActions, CardHeader, CardMedia, IconButton } from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 function AiCard ({ai, handleDownvote, handleUpvote, handleFavorite}) {
-    console.log("In Card: ", ai);
-    
-    const cardStyle = {
-        backgroundImage: `url("${ai.image}")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        color: "#fff",
-        minHeight: "200px",
-    };
 
     return (
-        <div className="ai-card" style={cardStyle}>
-            <h3>{ai.title}</h3>
-            <IconButton onClick={() => handleFavorite(ai.id)}>{ai.favorite ? <StarIcon/> : <StarBorderIcon/>}</IconButton>
-            <p>UP {ai.upvotes} | DOWN {ai.downvotes}</p>
-            <div>
-            <Button variant="contained" onClick={() => handleUpvote(ai.id)}>Upvote</Button>
-            <Button variant="outlined" onClick={() => handleDownvote(ai.id)}>Downvote</Button>
-            </div>
-        </div>
+        <Card variant="outlined" sx={{ width: "600px", mx: "auto" }}>
+            <CardHeader
+            titleTypographyProps={{ variant: "h6"}}
+            title={ai.title}
+            action={<IconButton color="primary" onClick={() => handleFavorite(ai.id)}>{ai.favorite ? <StarIcon/> : <StarBorderIcon/>}</IconButton>}
+            />
+            <CardMedia
+            component="img"
+            height="400"
+            image={ai.image}
+            alt={ai.title}
+            />
+            <CardActions>
+            <Button variant="contained" onClick={() => handleUpvote(ai.id)}>UP {ai.upvotes} </Button>
+            <Button variant="outlined" onClick={() => handleDownvote(ai.id)}>DOWN {ai.downvotes}</Button>
+            </CardActions>
+        </Card>
     );
 }
 

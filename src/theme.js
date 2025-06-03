@@ -25,7 +25,7 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          backgroundImage: 'none',  // Remove gradient
+          backgroundImage: 'none', 
         },
       },
     },
