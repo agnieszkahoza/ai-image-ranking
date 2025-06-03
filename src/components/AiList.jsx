@@ -1,14 +1,21 @@
+import { Box } from "@mui/material";
 import AiCard from "./AiCard";
 
 function AiList({ ai, handleUpvote, handleDownvote, handleFavorite}) {
   
 
   return (
-    <div className="ai-list">
+    <Box sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2.5,
+        alignItems: "center",
+        mt: 3,
+      }}>
       {ai.map((ai) => (
         <AiCard key={ai.id} ai={ai} handleUpvote={handleUpvote} handleDownvote={handleDownvote} handleFavorite={handleFavorite}/>
       ))}
-    </div>
+    </Box>
   );
 }
 
