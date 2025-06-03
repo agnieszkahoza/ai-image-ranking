@@ -8,8 +8,8 @@ function NavBar() {
 
   return (
     <nav>
-      <Typography variant="h4" className="navbar">AI images </Typography>
-      <Button variant={ pageName === 'hot' ? 'contained' : 'text'} component={NavLink} to="/hot">HOTTTT</Button>
+      <Typography variant="h4" className="navbar">Ai Ranking </Typography>
+      <Button variant={ pageName === 'hot' ? 'contained' : 'text'} component={NavLink} to="/hot">HOT</Button>
       <Button variant={ pageName === 'regular' ? 'contained' : 'text'} component={NavLink} to="/regular">Regular</Button>
       <Button variant={ pageName === 'add' ? 'contained' : 'text'} component={NavLink} to="/add">Add</Button>
     </nav>
