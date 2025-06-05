@@ -8,9 +8,9 @@ function AiList({ ai, handleUpvote, handleDownvote, handleFavorite}) {
     <Box sx={{
         display: "flex",
         flexDirection: "column",
-        gap: 2.5,
+        gap: 6,
         alignItems: "center",
-        mt: 3,
+        mt: 6,
       }}>
       {ai.map((ai) => (
         <AiCard key={ai.id} ai={ai} handleUpvote={handleUpvote} handleDownvote={handleDownvote} handleFavorite={handleFavorite}/>
