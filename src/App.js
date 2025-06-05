@@ -2,13 +2,18 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import AppRoutes from "./routes/AppRoutes";
-import theme from "./theme";
-import { useState } from "react";
+import getTheme from "./theme";
+import { useState, useMemo } from "react";
 import { initialImages } from "./data/ImageData";
 
 function App() {
   const [images, setImages] = useState(initialImages);
   const [tabValue, setTabValue] = useState(0);
+  const [mode, setMode] = useState("light");
+  const theme = useMemo(() => getTheme(mode), [mode]);
+  const handleModeToggle = () => {
+    setMode((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -68,9 +73,9 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+<CssBaseline />
       <div className="App">
-        <NavBar tabValue={tabValue} handleTabChange={handleTabChange} />
+        <NavBar tabValue={tabValue} handleTabChange={handleTabChange} mode={mode} handleModeToggle={handleModeToggle}/>
         <AppRoutes
           images={images}
           setImages={setImages}
