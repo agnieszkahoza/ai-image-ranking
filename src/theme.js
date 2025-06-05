@@ -1,19 +1,27 @@
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
+const getTheme = (mode) =>
+  createTheme({
+    palette: {
+      mode,
+      primary: {
+        main: '#6442d6',
+      },
+      secondary: {
+        main: '#dc004e',
+      },
+      ...(mode === 'dark' && {
+        background: {
+          default: '#121212',
+          paper: '#1d1d1d',
+        },
+      }),
     },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          borderRadius: 4,
           textTransform: 'none',
           fontWeight: 600,
         },
@@ -32,4 +40,4 @@ const theme = createTheme({
     },
 });
 
-export default theme;
+export default getTheme;

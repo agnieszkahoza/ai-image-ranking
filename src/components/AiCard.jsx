@@ -5,9 +5,9 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 function AiCard ({ai, handleDownvote, handleUpvote, handleFavorite}) {
 
     return (
-        <Card variant="outlined" sx={{ width: "600px", mx: "auto" }}>
+        <Card variant="elevation" elevation={6} sx={{ width: "80%", mx: "auto" }}>
             <CardHeader
-            titleTypographyProps={{ variant: "h6"}}
+            titleTypographyProps={{ variant: "h6" }}
             title={ai.title}
             action={<IconButton color="primary" onClick={() => handleFavorite(ai.id)}>{ai.favorite ? <StarIcon/> : <StarBorderIcon/>}</IconButton>}
             />
