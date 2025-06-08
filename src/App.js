@@ -46,15 +46,15 @@ function App() {
   };
 
   const handleNewImage = (newID, newTitle, newURL) => {
-    setImages([
-      ...images,
-      {
-        id: newID,
-        title: newTitle,
-        upvotes: 0,
-        downvotes: 0,
-        image: newURL,
-      },
+   setImages((prevImages) => [
+    ...prevImages,
+    {
+      id: newID,
+      title: newTitle,
+      upvotes: 0,
+      downvotes: 0,
+      image: newURL,
+    },
     ]);
   };
 

@@ -1,12 +1,8 @@
 import React from "react";
-import AiList from "../components/AiList";
-import { isHot } from "../utils/isHot";
+import ImagesList from "./ImagesList";
 
-
-function HotPage({images, handleUpvote, handleDownvote, handleFavorite}) {
-
-  return images.length > 0 ? <AiList ai={images.filter((ai) => isHot(ai))} handleDownvote={handleDownvote} handleUpvote={handleUpvote} handleFavorite={handleFavorite}/>: <p>No hot images</p>;
-
+function HotPage(props) {
+  return <ImagesList {...props} showHotOnly={true} />;
 }
 
 export default HotPage;

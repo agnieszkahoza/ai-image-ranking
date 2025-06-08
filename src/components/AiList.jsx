@@ -3,7 +3,6 @@ import AiCard from "./AiCard";
 
 function AiList({ ai, handleUpvote, handleDownvote, handleFavorite}) {
   
-
   return (
     <Box sx={{
         display: "flex",

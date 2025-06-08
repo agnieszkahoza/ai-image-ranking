@@ -1,13 +1,8 @@
 import React from "react";
-import AiList from "../components/AiList";
-import { isHot } from "../utils/isHot";
+import ImagesList from "./ImagesList";
 
-
-function RegularPage({images, handleUpvote, handleDownvote, handleFavorite}) {
-  console.log("In Regular Page:", images);
-  
-
-  return <AiList ai={images.filter((ai) => !isHot(ai))} handleDownvote={handleDownvote} handleUpvote={handleUpvote} handleFavorite={handleFavorite}/>;
+function RegularPage(props) {
+  return <ImagesList {...props} showHotOnly={false} />;
 }
 
 export default RegularPage;

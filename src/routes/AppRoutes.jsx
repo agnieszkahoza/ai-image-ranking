@@ -5,7 +5,6 @@ import RegularPage from "../pages/RegularPage";
 import AddImagePage from "../pages/AddImagePage";
 
 function AppRoutes({images, handleDownvote, handleUpvote, handleNewImage, handleFavorite}) {
-    console.log(images);
     
     return (
         <Routes>            
