@@ -1,5 +1,6 @@
 import { Button, TextField, Stack, Box, Snackbar, Alert } from "@mui/material";
 import React, { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 function AddAiPage({handleNewImage}) {
   const [title, setTitle] = useState("");
@@ -7,12 +8,12 @@ function AddAiPage({handleNewImage}) {
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    handleNewImage(Math.floor(Math.random() * 1000), title, URL);
-    setOpenSnackbar(true);
-    setTitle("");
-    setImg("");
-  };
+  e.preventDefault();
+  handleNewImage(uuidv4(), title, URL);
+  setOpenSnackbar(true);
+  setTitle("");
+  setImg("");
+};
 
   const handleClose = () => {
     setOpenSnackbar(false);
