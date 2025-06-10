@@ -1,7 +1,8 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider, Box } from "@mui/material";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import AppRoutes from "./routes/AppRoutes";
+import Footer from "./components/Footer";
 import getTheme from "./theme";
 import { useState, useMemo } from "react";
 import { initialImages } from "./data/ImageData";
@@ -74,13 +75,18 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App">
+         <Box
+        display="flex"
+        flexDirection="column"
+        minHeight="100vh"
+      >
         <NavBar
           tabValue={tabValue}
           handleTabChange={handleTabChange}
           mode={mode}
           handleModeToggle={handleModeToggle}
         />
+         <Box component="main" flexGrow={1}>
         <AppRoutes
           images={images}
           setImages={setImages}
@@ -89,7 +95,9 @@ function App() {
           handleNewImage={handleNewImage}
           handleFavorite={handleFavorite}
         />
-      </div>
+        </Box>
+        <Footer />
+        </Box>
     </ThemeProvider>
   );
 }
