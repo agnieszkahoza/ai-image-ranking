@@ -62,7 +62,7 @@ function AddAiPage({ handleNewImage }) {
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       >
         <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          Your new image has been added: {title}
+          Your new image has been added!
         </Alert>
       </Snackbar>
     </>
