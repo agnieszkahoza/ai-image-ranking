@@ -2,7 +2,7 @@ import React from "react";
 import AiList from "../components/AiList";
 import { isHot } from "../utils/isHot";
 
-function ImagesList({
+function ImageList({
   images,
   showHotOnly,
   handleUpvote,
@@ -27,4 +27,4 @@ function ImagesList({
   );
 }
 
-export default ImagesList;
+export default ImageList;

@@ -46,19 +46,19 @@ function App() {
   };
 
   const handleNewImage = (newID, newTitle, newURL) => {
-   setImages((prevImages) => [
-    ...prevImages,
-    {
-      id: newID,
-      title: newTitle,
-      upvotes: 0,
-      downvotes: 0,
-      image: newURL,
-    },
+    setImages((prevImages) => [
+      ...prevImages,
+      {
+        id: newID,
+        title: newTitle,
+        upvotes: 0,
+        downvotes: 0,
+        image: newURL,
+      },
     ]);
   };
 
-    const handleFavorite = (imageId) => {
+  const handleFavorite = (imageId) => {
     setImages((prevImages) =>
       prevImages.map((image) =>
         image.id === imageId
@@ -73,9 +73,14 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-<CssBaseline />
+      <CssBaseline />
       <div className="App">
-        <NavBar tabValue={tabValue} handleTabChange={handleTabChange} mode={mode} handleModeToggle={handleModeToggle}/>
+        <NavBar
+          tabValue={tabValue}
+          handleTabChange={handleTabChange}
+          mode={mode}
+          handleModeToggle={handleModeToggle}
+        />
         <AppRoutes
           images={images}
           setImages={setImages}
